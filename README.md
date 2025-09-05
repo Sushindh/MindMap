@@ -37,7 +37,7 @@
 ## 📸 Screenshots
 
 ### Landing Page
-![Landing Page](<img width="1919" height="873" alt="image" src="https://github.com/user-attachments/assets/6f1e47d6-060a-4b9f-9175-742951dad4e8" />)
+![Landing Page]<img width="1919" height="873" alt="image" src="https://github.com/user-attachments/assets/6f1e47d6-060a-4b9f-9175-742951dad4e8" />
 
 ### Mind Map Generation
 ![Mind Map](<img width="1919" height="899" alt="image" src="https://github.com/user-attachments/assets/6881e272-7841-49b4-8c6a-2014844f3138" />
