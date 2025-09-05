@@ -43,7 +43,7 @@
 <img width="1919" height="899" alt="image" src="https://github.com/user-attachments/assets/6881e272-7841-49b4-8c6a-2014844f3138" />
 
 ### Dashboard
-<img width="1919" height="910" alt="image" src="https://github.com/user-attachments/assets/f126b017-dcd0-4a8a-98b4-4de1edc8d55" />
+<img width="1919" height="910" alt="image" src="https://github.com/user-attachments/assets/dc643cbd-6c30-465e-87d1-5258daeb116b" />
 
 ### AI Chat Bot To ask doubt and Expanding the Node
 <img width="1919" height="807" alt="image" src="https://github.com/user-attachments/assets/f5d24f01-967e-4d52-8499-26db8747a95b" />
