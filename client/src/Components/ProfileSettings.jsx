@@ -1,3 +1,4 @@
+
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import {
@@ -28,7 +29,6 @@ export default function ProfileSettings() {
   });
 
   const [theme, setTheme] = useState("light"); // 'light' or 'dark'
-
   const [saving, setSaving] = useState(false);
   const [passwordVisible, setPasswordVisible] = useState(false);
   const [password, setPassword] = useState("");
@@ -45,29 +45,29 @@ export default function ProfileSettings() {
   // Theme toggle
   const toggleTheme = () => {
     setTheme((t) => (t === "light" ? "dark" : "light"));
-    // In real app, also update CSS root or apply tailwind dark class
+    // In real app, update CSS root or apply tailwind dark class
   };
 
   return (
-    <div className="max-w-4xl mx-auto px-6 py-10 bg-white rounded-md shadow-lg my-10">
-      <h1 className="text-3xl font-bold text-blue-700 mb-6 flex items-center gap-3">
-        <User className="h-8 w-8" /> Profile & Settings
+    <div className="max-w-3xl mx-auto px-4 sm:px-6 py-6 sm:py-8 bg-white rounded-lg shadow-lg my-6 sm:my-8">
+      <h1 className="text-lg sm:text-xl md:text-2xl font-bold text-blue-700 mb-4 sm:mb-6 flex items-center gap-2 sm:gap-3">
+        <User className="h-5 w-5 sm:h-6 sm:w-6" /> Profile & Settings
       </h1>
 
       {/* Profile Section */}
-      <section className="mb-10">
-        <h2 className="text-xl font-semibold mb-4 flex items-center gap-2 text-blue-600">
-          <Settings2 className="h-6 w-6" /> User Profile
+      <section className="mb-6 sm:mb-8">
+        <h2 className="text-base sm:text-lg font-semibold mb-3 sm:mb-4 flex items-center gap-2 text-blue-600">
+          <Settings2 className="h-4 w-4 sm:h-5 sm:w-5" /> User Profile
         </h2>
         <form
           onSubmit={(e) => {
             e.preventDefault();
             handleSave();
           }}
-          className="space-y-5"
+          className="space-y-4 sm:space-y-5"
         >
           <div>
-            <label className="block mb-1 font-semibold text-gray-700" htmlFor="username">
+            <label className="block mb-1 font-semibold text-gray-700 text-sm sm:text-base" htmlFor="username">
               Username
             </label>
             <input
@@ -77,12 +77,13 @@ export default function ProfileSettings() {
               onChange={(e) =>
                 setProfile((p) => ({ ...p, username: e.target.value }))
               }
-              className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full px-3 py-1.5 sm:px-4 sm:py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm sm:text-base"
               required
+              aria-label="Username"
             />
           </div>
           <div>
-            <label className="block mb-1 font-semibold text-gray-700" htmlFor="email">
+            <label className="block mb-1 font-semibold text-gray-700 text-sm sm:text-base" htmlFor="email">
               Email
             </label>
             <input
@@ -92,12 +93,13 @@ export default function ProfileSettings() {
               onChange={(e) =>
                 setProfile((p) => ({ ...p, email: e.target.value }))
               }
-              className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full px-3 py-1.5 sm:px-4 sm:py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm sm:text-base"
               required
+              aria-label="Email"
             />
           </div>
           <div>
-            <label className="block mb-1 font-semibold text-gray-700" htmlFor="password">
+            <label className="block mb-1 font-semibold text-gray-700 text-sm sm:text-base" htmlFor="password">
               Password
             </label>
             <div className="relative">
@@ -106,16 +108,17 @@ export default function ProfileSettings() {
                 id="password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full px-3 py-1.5 sm:px-4 sm:py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm sm:text-base"
                 placeholder="Enter new password"
+                aria-label="New password"
               />
               <button
                 type="button"
                 onClick={() => setPasswordVisible((v) => !v)}
-                className="absolute right-3 top-2 text-gray-400 hover:text-gray-700"
+                className="absolute right-2 sm:right-3 top-1.5 sm:top-2 text-gray-400 hover:text-gray-700"
                 aria-label={passwordVisible ? "Hide password" : "Show password"}
               >
-                {passwordVisible ? <Slash className="h-5 w-5" /> : <User className="h-5 w-5" />}
+                {passwordVisible ? <Slash className="h-4 w-4 sm:h-5 sm:w-5" /> : <User className="h-4 w-4 sm:h-5 sm:w-5" />}
               </button>
             </div>
           </div>
@@ -125,24 +128,25 @@ export default function ProfileSettings() {
             type="submit"
             disabled={saving}
             whileTap={{ scale: 0.95 }}
-            className={`px-8 py-2 rounded-md font-semibold text-white ${
+            className={`w-full sm:w-auto px-6 py-2 sm:px-8 sm:py-2.5 rounded-md font-semibold text-white text-sm sm:text-base ${
               saving ? "bg-blue-400" : "bg-blue-600 hover:bg-blue-700"
             } transition disabled:cursor-not-allowed`}
+            aria-label="Save profile settings"
           >
-            <Save className="inline mr-2 h-5 w-5 -mt-0.5" />
+            <Save className="inline mr-1.5 sm:mr-2 h-4 w-4 sm:h-5 sm:w-5 -mt-0.5" />
             {saving ? "Saving..." : "Save Profile"}
           </motion.button>
         </form>
       </section>
 
       {/* AI Preferences */}
-      <section className="mb-10">
-        <h2 className="text-xl font-semibold mb-4 flex items-center gap-2 text-blue-600">
-          <BotMessageSquare className="h-6 w-6" /> AI Preferences
+      <section className="mb-6 sm:mb-8">
+        <h2 className="text-base sm:text-lg font-semibold mb-3 sm:mb-4 flex items-center gap-2 text-blue-600">
+          <BotMessageSquare className="h-4 w-4 sm:h-5 sm:w-5" /> AI Preferences
         </h2>
-        <div className="space-y-6">
+        <div className="space-y-4 sm:space-y-5">
           <div>
-            <label htmlFor="creativity" className="block mb-1 font-semibold text-gray-700">
+            <label htmlFor="creativity" className="block mb-1 font-semibold text-gray-700 text-sm sm:text-base">
               Creativity Level ({Math.round(aiPrefs.creativity * 100)}%)
             </label>
             <input
@@ -156,10 +160,11 @@ export default function ProfileSettings() {
                 setAiPrefs((p) => ({ ...p, creativity: Number(e.target.value) }))
               }
               className="w-full"
+              aria-label="AI creativity level"
             />
           </div>
           <div>
-            <label htmlFor="responseLength" className="block mb-1 font-semibold text-gray-700">
+            <label htmlFor="responseLength" className="block mb-1 font-semibold text-gray-700 text-sm sm:text-base">
               Response Length (max tokens: {aiPrefs.responseLength})
             </label>
             <input
@@ -172,37 +177,40 @@ export default function ProfileSettings() {
               onChange={(e) =>
                 setAiPrefs((p) => ({ ...p, responseLength: Number(e.target.value) }))
               }
-              className="w-[100px] px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-24 sm:w-28 px-2 sm:px-3 py-1.5 sm:py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm sm:text-base"
+              aria-label="AI response length"
             />
           </div>
         </div>
       </section>
 
       {/* Export Settings */}
-      <section>
-        <h2 className="text-xl font-semibold mb-4 flex items-center gap-2 text-blue-600">
-          <Download className="h-6 w-6" /> Export Settings
+      <section className="mb-6 sm:mb-8">
+        <h2 className="text-base sm:text-lg font-semibold mb-3 sm:mb-4 flex items-center gap-2 text-blue-600">
+          <Download className="h-4 w-4 sm:h-5 sm:w-5" /> Export Settings
         </h2>
-        <div className="space-x-6 flex items-center">
-          <label className="inline-flex items-center gap-2 text-gray-700 font-medium cursor-pointer">
+        <div className="flex flex-col sm:flex-row gap-3 sm:gap-6">
+          <label className="inline-flex items-center gap-2 text-gray-700 font-medium cursor-pointer text-sm sm:text-base">
             <input
               type="radio"
               name="exportFormat"
               value="pdf"
               checked={exportPrefs.format === "pdf"}
               onChange={() => setExportPrefs({ format: "pdf" })}
-              className="form-radio"
+              className="form-radio h-4 w-4 sm:h-5 sm:w-5"
+              aria-label="Export as PDF"
             />
             PDF
           </label>
-          <label className="inline-flex items-center gap-2 text-gray-700 font-medium cursor-pointer">
+          <label className="inline-flex items-center gap-2 text-gray-700 font-medium cursor-pointer text-sm sm:text-base">
             <input
               type="radio"
               name="exportFormat"
               value="image"
               checked={exportPrefs.format === "image"}
               onChange={() => setExportPrefs({ format: "image" })}
-              className="form-radio"
+              className="form-radio h-4 w-4 sm:h-5 sm:w-5"
+              aria-label="Export as Image"
             />
             Image
           </label>
@@ -210,29 +218,29 @@ export default function ProfileSettings() {
       </section>
 
       {/* Theme Toggle */}
-      <section className="mt-12 flex items-center gap-4">
-        <span className="font-semibold text-blue-600">Theme:</span>
+      <section className="mt-6 sm:mt-8 flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-4">
+        <span className="font-semibold text-blue-600 text-sm sm:text-base">Theme:</span>
         <button
           onClick={toggleTheme}
           aria-label="Toggle theme"
-          className="flex items-center gap-2 px-4 py-2 rounded-md border border-blue-600 text-blue-600 hover:bg-blue-50 transition"
+          className="flex items-center gap-2 px-4 py-2 rounded-md border border-blue-600 text-blue-600 hover:bg-blue-50 transition text-sm sm:text-base"
         >
-          {theme === "light" ? <SunMedium className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
+          {theme === "light" ? <SunMedium className="h-4 w-4 sm:h-5 sm:w-5" /> : <Moon className="h-4 w-4 sm:h-5 sm:w-5" />}
           {theme.charAt(0).toUpperCase() + theme.slice(1)}
         </button>
       </section>
 
       {/* Logout */}
-      <div className="mt-12">
+      <div className="mt-6 sm:mt-8">
         <button
           onClick={() => alert("Logging out...")}
-          className="flex items-center gap-2 px-6 py-2 bg-red-600 hover:bg-red-700 text-white rounded-md font-semibold transition"
+          className="flex items-center gap-2 px-4 sm:px-6 py-2 rounded-md bg-red-600 hover:bg-red-700 text-white font-semibold text-sm sm:text-base transition"
+          aria-label="Log out"
         >
-          <LogOut className="h-5 w-5" />
+          <LogOut className="h-4 w-4 sm:h-5 sm:w-5" />
           Logout
         </button>
       </div>
     </div>
   );
 }
-
