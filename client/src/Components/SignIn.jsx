@@ -28,7 +28,7 @@ export default function SignIn() {
     setErrorMsg("");
 
     try {
-      const response = await fetch("http://localhost:8000/signin", {
+      const response = await fetch("https://mindmap-36hl.onrender.com/signin", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({

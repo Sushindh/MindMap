@@ -4,9 +4,17 @@ from routers import signup, signin, checkMongo
 
 app = FastAPI()
 # FastAPIInstrumentor().instrument_app(app) 
+
+ALLOWED_ORIGINS = [
+    "https://mind-map-omega-beryl.vercel.app",              # production
+    "https://mind-map-git-main-sushindh-as-projects.vercel.app",
+    "https://mind-hsezjg47f-sushindh-as-projects.vercel.app", # preview (optional)
+    "http://localhost:5173"                         # keep for local dev
+]
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins = ["http://localhost:5173"], # react front end
+    allow_origins = ALLOWED_ORIGINS, # react front end
     allow_credentials = True, # authentication, cookies, header
     allow_methods = ["*"], #GET, PUT, POST, DELETE
     allow_headers = ["*"]
