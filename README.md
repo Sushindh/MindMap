@@ -193,14 +193,3 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 - LinkedIn: [Sushindh_Anandan](https://www.linkedin.com/in/sushindh-a-7281a1288/)
 - Email: sushindh.anandan@gmail.com
 
----
-
-<div align="center">
-
-**⭐ Star this repository if you found it helpful!**
-
-Made with ❤️ and lots of ☕
-
-*Powered by advanced AI • Styled by chaos*
-
-</div>
