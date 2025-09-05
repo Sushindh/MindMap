@@ -1,6 +1,8 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 
+import SignUp from "./Components/SignUp";
+import SignIn from "./Components/SignIn";
 import LandingPage from "./Components/LandingPage";
 import Dashboard from "./Components/Dashboard";
 import MindMapGenerator from "./Components/MindMapGenerator";
@@ -20,7 +22,9 @@ export default function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<LandingPage />} />
+        <Route path="/" element={<SignIn />} />
+        <Route path="signup" element={<SignUp />} />
+        <Route path="/landing" element={<LandingPage />} />
 
         <Route path="/dashboard" element={<Dashboard />} />
 

@@ -6,11 +6,10 @@ import {
   FileDown, 
   Zap, 
   Move3D, 
-  UserPlus, 
+  LogOut, 
   PlayCircle 
 } from "lucide-react";
-import Dashboard from "./Dashboard";
-import {Link}from "react-router-dom"
+import { Link } from "react-router-dom";
 
 const features = [
   {
@@ -67,13 +66,12 @@ export default function LandingPage() {
             <a href="#features" className="font-bold text-black uppercase hover:bg-yellow-400 px-3 py-1 transition border-2 border-transparent hover:border-black">
               FEATURES
             </a>
-            <a href="#demo" className="font-bold text-black uppercase hover:bg-yellow-400 px-3 py-1 transition border-2 border-transparent hover:border-black">
-              DEMO
-            </a>
-            <button className="border-4 border-black bg-green-400 px-6 py-2 text-black font-black uppercase shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] transition-shadow flex items-center gap-2">
-              <UserPlus className="h-5 w-5" />
-              SIGN UP
-            </button>
+            <Link to="/">
+              <button className="border-4 border-black bg-green-400 px-6 py-2 text-black font-black uppercase shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] transition-shadow flex items-center gap-2">
+                <LogOut className="h-5 w-5" />
+                LOG OUT
+              </button>
+            </Link>
           </nav>
         </div>
       </header>
@@ -104,11 +102,7 @@ export default function LandingPage() {
             <div className="flex flex-col sm:flex-row gap-4">
               <button className="border-4 border-black bg-pink-500 px-8 py-4 text-black font-black uppercase shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] hover:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] transition-shadow flex items-center justify-center gap-3">
                 <Wand2 className="h-6 w-6" />
-                <Link to='/dashboard' >TRY IT NOW</Link>
-              </button>
-              <button className="border-4 border-black bg-green-400 px-8 py-4 text-black font-black uppercase shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] hover:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] transition-shadow flex items-center justify-center gap-3">
-                <PlayCircle className="h-6 w-6" />
-                WATCH DEMO
+                <Link to='/dashboard'>TRY IT NOW</Link>
               </button>
             </div>
           </div>
@@ -165,37 +159,12 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* Demo Section */}
-      <section id="demo" className="border-t-4 border-black bg-white px-8 py-16">
-        <div className="max-w-4xl mx-auto text-center">
-          <div className="border-4 border-black bg-pink-500 p-6 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] mb-8">
-            <h2 className="text-3xl md:text-4xl font-black text-black uppercase mb-4">
-              SEE MINDSCAPE IN ACTION
-            </h2>
-            <p className="text-lg font-bold text-black uppercase">
-              EXPERIENCE LIVE BRAINSTORMING WITH GEMINI AI AND DISCOVER HOW YOUR IDEAS EVOLVE!
-            </p>
-          </div>
-          
-          {/* Demo Placeholder */}
-          {/* <div className="border-4 border-black bg-gray-100 p-8 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
-            <div className="border-4 border-black bg-blue-400 h-64 flex items-center justify-center shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
-              <div className="text-center">
-                <PlayCircle className="h-16 w-16 text-black mx-auto mb-4" />
-                <p className="font-black text-xl text-black uppercase">DEMO VIDEO HERE</p>
-                <p className="font-bold text-black uppercase text-sm mt-2">CLICK TO WATCH MINDSCAPE IN ACTION</p>
-              </div>
-            </div>
-          </div> */}
-        </div>
-      </section>
-
       {/* Footer */}
       <footer className="border-t-4 border-black bg-gray-200 py-8 px-8">
         <div className="max-w-6xl mx-auto">
           <div className="border-4 border-black bg-yellow-400 p-4 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
             <p className="text-center font-black text-black uppercase">
-              &copy; {new Date().getFullYear()} MINDSCAPE. ALL RIGHTS RESERVED. POWERED BY CHAOS MODE.
+              &copy; {new Date().getFullYear()} MINDSCAPE. ALL RIGHTS RESERVED.
             </p>
           </div>
         </div>

@@ -142,7 +142,7 @@ export default function Dashboard() {
         <div className="flex flex-col lg:flex-row items-start justify-between gap-6">
           <div className="flex items-center gap-4">
             <button 
-              onClick={() => window.location.href = '/'}
+              onClick={() => window.location.href = '/landing'}
               className="border-4 border-black bg-yellow-400 p-3 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] transition-shadow"
             >
               <ArrowLeft className="h-6 w-6 text-black" />
@@ -159,14 +159,14 @@ export default function Dashboard() {
           </div>
           
           <div className="flex flex-col sm:flex-row gap-3 w-full lg:w-auto">
-            <input
+            {/* <input
               className="border-4 border-black bg-white px-4 py-3 text-black font-bold placeholder-gray-500 uppercase text-sm focus:outline-none focus:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-shadow"
               type="text"
               placeholder="MAP NAME"
               value={mindMapName}
               disabled={creating}
               onChange={(e) => setMindMapName(e.target.value)}
-            />
+            /> */}
             <input
               className="border-4 border-black bg-white px-4 py-3 text-black font-bold placeholder-gray-500 uppercase text-sm focus:outline-none focus:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-shadow"
               type="text"
@@ -178,7 +178,7 @@ export default function Dashboard() {
             <button
               onClick={handleSubmit}
               disabled={creating || !topic.trim() || !mindMapName.trim()}
-              className="border-4 border-black bg-pink-500 px-6 py-3 text-black font-black uppercase text-sm hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-shadow disabled:bg-gray-300 flex items-center gap-2"
+              className="border-4 border-black bg-pink-500 px-6 py-3 text-black font-black uppercase text-sm hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-shadow disabled:bg-yellow-300 flex items-center gap-2"
             >
               <Link to='/mindmap/new' ><Plus className="h-5 w-5" />
               {creating ? "CREATING..." : "CREATE"}</Link>
@@ -333,6 +333,15 @@ export default function Dashboard() {
           ))}
         </div>
       </div>
+      <footer className="border-t-4 border-black py-8 px-8">
+        <div className="max-w-6xl mx-auto">
+          <div className="border-4 border-black bg-yellow-400 p-4 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
+            <p className="text-center font-black text-black uppercase">
+              &copy; {new Date().getFullYear()} MINDSCAPE. ALL RIGHTS RESERVED.
+            </p>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 }

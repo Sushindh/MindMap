@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import { BrainCog, Zap, AlertCircle, ArrowLeft, Download, Share2, Plus, Info, Lightbulb, X, MessageCircle, Send, Trash2, Settings } from "lucide-react";
 
 // HARDCODED API KEY - Replace with your actual Gemini API key
-const GEMINI_API_KEY = "";
+const GEMINI_API_KEY = import.meta.env.VITE_GEMINI_API_KEY;
 
 const initialMindMapData = {
   "MINDSCAPE": {
