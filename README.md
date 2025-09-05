@@ -37,19 +37,17 @@
 ## 📸 Screenshots
 
 ### Landing Page
-![Landing Page]<img width="1919" height="873" alt="image" src="https://github.com/user-attachments/assets/6f1e47d6-060a-4b9f-9175-742951dad4e8" />
+<img width="1919" height="873" alt="image" src="https://github.com/user-attachments/assets/6f1e47d6-060a-4b9f-9175-742951dad4e8" />
 
 ### Mind Map Generation
-![Mind Map](<img width="1919" height="899" alt="image" src="https://github.com/user-attachments/assets/6881e272-7841-49b4-8c6a-2014844f3138" />
-)
+<img width="1919" height="899" alt="image" src="https://github.com/user-attachments/assets/6881e272-7841-49b4-8c6a-2014844f3138" />
 
 ### Dashboard
-![Dashboard](<img width="1919" height="910" alt="image" src="https://github.com/user-attachments/assets/f126b017-dcd0-4a8a-98b4-4d4e1edc8d55" />
-)
+<img width="1919" height="910" alt="image" src="https://github.com/user-attachments/assets/f126b017-dcd0-4a8a-98b4-4de1edc8d55" />
 
 ### AI Chat Bot To ask doubt and Expanding the Node
-![Chat Bot](<img width="1919" height="807" alt="image" src="https://github.com/user-attachments/assets/f5d24f01-967e-4d52-8499-26db8747a95b" />
-)
+<img width="1919" height="807" alt="image" src="https://github.com/user-attachments/assets/f5d24f01-967e-4d52-8499-26db8747a95b" />
+
 
 ## 🛠️ Installation & Setup
 
