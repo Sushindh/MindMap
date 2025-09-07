@@ -82,7 +82,7 @@ npm start
 
 ```
 # Navigate to backend directory
-cd backend
+cd server
 
 # Install Python dependencies
 pip install -r requirements.txt
